@@ -8,7 +8,7 @@ class MsbuildResolver implements IExecutableResolver {
     static final String MSBUILD_WOW6432_PREFIX = "SOFTWARE\\Wow6432Node\\Microsoft\\MSBuild\\ToolsVersions\\"
 
     void setupExecutable(Msbuild msbuild) {
-        List<String> availableVersions =
+        /*List<String> availableVersions =
                 getMsBuildVersionsFromRegistry(MSBUILD_WOW6432_PREFIX) +
                 getMsBuildVersionsFromRegistry(MSBUILD_PREFIX)
         msbuild.logger.debug("Found following MSBuild versions in the registry: ${availableVersions}")
@@ -25,7 +25,9 @@ class MsbuildResolver implements IExecutableResolver {
             msbuild.logger.info("Resolved MSBuild to ${msbuild.msbuildDir}")
         else
             msbuild.logger.warn("Couldn't resolve MSBuild in the system (existing versions: ${availableVersions}).")
-
+				*/
+				
+				msbuild.msbuildDir = "C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Community\\MSBuild\\15.0\\Bin"
         msbuild.executable = 'msbuild.exe'
     }
 
